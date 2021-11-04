@@ -80,7 +80,7 @@ public class SinglyLinkedList<E> {
             return;
         }
         Node<E> temp = head;
-        for (int i = 0; i < position - 2; i++) {
+        for (int i = 0; i < position - 1; i++) {
             temp = temp.next;
         }
         temp.next = temp.next.next;
@@ -103,6 +103,22 @@ public class SinglyLinkedList<E> {
         return sb.toString();
     }
     public static void main(String[] args) {
+
+        SinglyLinkedList<Integer> sll = new SinglyLinkedList<Integer>();
+        sll.insertFirst(1);
+        sll.insertFirst(2);
+        sll.insertFirst(3);
+        System.out.println(sll);//3-2-1
+        sll.insertLast(4);
+        System.out.println(sll);//3-2-1-4
+        sll.insert(5,2);
+        System.out.println(sll);//3-2-5-1-4
+        sll.delete(2);
+        System.out.println(sll);//3-2-1-4
+        sll.update(6,1);
+        System.out.println(sll);//3-6-1-4
+        sll.delete(3);
+        System.out.println(sll);//3-6-1
 
     }
 }
